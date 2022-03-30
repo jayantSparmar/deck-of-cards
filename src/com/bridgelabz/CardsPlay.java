@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CardsPlay {
     String[] cards = new String[52];
@@ -18,6 +19,21 @@ public class CardsPlay {
                 System.out.println(cards[position]);
                 position++;
             }
+        }
+    }
+    public void addPlayer(){
+
+        System.out.print(" Enter the No of players : ");
+        Scanner sc = new Scanner(System.in);
+        int playerCount = sc.nextInt();
+        if(playerCount >= 2 && playerCount <= 4){
+            for(int i=0; i<playerCount; i++){
+                Player player = new Player();
+                playerList.add(player);
+            }
+
+        }else{
+            System.out.println("Invalid input # Enter between 2 to 4 #");
         }
     }
 }
